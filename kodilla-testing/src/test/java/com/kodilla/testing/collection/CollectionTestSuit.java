@@ -36,7 +36,8 @@ public class CollectionTestSuit {
     @Test
     @DisplayName("Check if list is empty")
     public void testOddNumbersExterminatorEmptyList() {
-        List<Integer> integerList = new ArrayList<Integer>();
+        Integer initValues[] = new Integer[] {};
+        List<Integer> integerList = Arrays.asList(initValues);
         List<Integer> expectedList = new ArrayList<Integer>();
         OddNumbersExterminator oddNumbers = new OddNumbersExterminator();
 
