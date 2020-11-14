@@ -24,25 +24,33 @@ public class ShapeCollectorTestSuite {
         //Given
         ShapeCollector shapeCollector = new ShapeCollector();
         Circle circle = new Circle(50);
+        Square square = new Square(50);
         shapeCollector.addFigure(circle);
+        shapeCollector.addFigure(square);
+        int beforeRemoveQuantity = shapeCollector.getFigureQuantity();
 
         //When
         boolean result = shapeCollector.removeFigure(circle);
 
+        //Then
+
         Assertions.assertTrue(result);
-        Assertions.assertEquals(0, shapeCollector.getFigureQuantity());
+        Assertions.assertEquals(beforeRemoveQuantity -1, shapeCollector.getFigureQuantity());
     }
     @Test
     void testGetFigure() {
         //Given
         ShapeCollector shapeCollector = new ShapeCollector();
         Circle circle = new Circle(50);
+        Square square = new Square(50);
         shapeCollector.addFigure(circle);
+        shapeCollector.addFigure(square);
 
         //When
-        String figureResult = shapeCollector.getFigure(0);
+        String figureResult = shapeCollector.getFigure(1);
 
-        Assertions.assertEquals("Circle", figureResult);
+        //Then
+        Assertions.assertEquals("Square", figureResult);
     }
     @Test
     void testShowFigures() {
@@ -52,13 +60,15 @@ public class ShapeCollectorTestSuite {
         Square square = new Square(50);
         Rectangle rectangle = new Rectangle(50);
         shapeCollector.addFigure(circle);
-        shapeCollector.addFigure(circle);
-        shapeCollector.addFigure(circle);
+        shapeCollector.addFigure(square);
+        shapeCollector.addFigure(rectangle);
+
 
         //When
         String figuresTxt = shapeCollector.showFigures();
 
-        Assertions.assertEquals("Circle, Square, Rectangle", figuresTxt);
+        //Then
+        Assertions.assertEquals("[Circle, Square, Rectangle]", figuresTxt);
 
     }
 }
