@@ -9,22 +9,24 @@ import java.util.List;
 
 public class ShapeCollector {
     private Shape shape;
-    private List<String> shapesList = new ArrayList<>();
+    private List<Shape> shapesList = new ArrayList<>();
 
     public void addFigure(Shape shape){
-        shapesList.add(shape.getShapeName());
+        shapesList.add(shape);
     }
     public boolean removeFigure(Shape shape){
-        if(shapesList.contains(shape.getShapeName())){
-            shapesList.remove(shape.getShapeName());
+        if(shapesList.contains(shape)){
+            shapesList.remove(shape);
             return true;
         }
         return false;
     }
 
-    public String getFigure(int n) {
-        String figure = shapesList.get(n);
-        return figure;
+    public Shape getFigure(int n) {
+        if (n >= 0 && n < shapesList.size()) {
+            return shapesList.get(n);
+        }
+        return null;
     }
 
     public String showFigures(){

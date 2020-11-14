@@ -16,4 +16,7 @@ public class Square implements Shape {
     public double getAreaValue() {
         return this.squareArea;
     }
+    public String toString(){
+        return getShapeName();
+    }
 }

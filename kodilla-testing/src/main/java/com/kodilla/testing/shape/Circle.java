@@ -15,4 +15,8 @@ public class Circle implements Shape {
     public double getAreaValue() {
         return this.circleArea;
     }
+
+    public String toString(){
+        return getShapeName();
+    }
 }

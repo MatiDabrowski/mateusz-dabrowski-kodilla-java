@@ -53,10 +53,10 @@ public class ShapeCollectorTestSuite {
             shapeCollector.addFigure(square);
 
             //When
-            String figureResult = shapeCollector.getFigure(1);
+            Shape figureResult = shapeCollector.getFigure(1);
 
             //Then
-            Assertions.assertEquals("Square", figureResult);
+            Assertions.assertEquals(square , figureResult);
         }
         @DisplayName("Test showing" +
                 " figure")

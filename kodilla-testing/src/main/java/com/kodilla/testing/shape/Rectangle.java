@@ -16,4 +16,7 @@ public class Rectangle implements Shape {
     public double getAreaValue() {
         return this.rectangleArea;
     }
+    public String toString(){
+        return getShapeName();
+    }
 }
