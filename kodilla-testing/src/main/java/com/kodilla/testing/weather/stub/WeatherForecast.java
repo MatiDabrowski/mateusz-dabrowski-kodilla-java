@@ -23,7 +23,7 @@ public class WeatherForecast {
     }
 
     public double averageTemperature(){
-        double average = 0 ;
+
         double result = 0 ;
         Map<String, Double> resultMap = new HashMap<>();
 
@@ -32,12 +32,12 @@ public class WeatherForecast {
 
             // adding 1 celsius degree to current value
             // as a temporary weather forecast
-            resultMap.put(temperature.getKey(), temperature.getValue() + 1.0); // [1]
+            resultMap.put(temperature.getKey(), temperature.getValue()); // [1]
             result = result + temperature.getValue();
 
         }
-        average = result / resultMap.size();
-        return average;
+
+        return result / resultMap.size();
     }
 
     public double medianTemperature(){
