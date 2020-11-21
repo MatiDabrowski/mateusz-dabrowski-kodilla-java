@@ -1,6 +1,7 @@
 package com.kodilla.stream;
 
 import com.kodilla.stream.beautifier.PoemBeautifier;
+import com.kodilla.stream.iterate.NumbersGenerator;
 import com.kodilla.stream.lambda.*;
 import com.kodilla.stream.reference.FunctionalCalculator;
 
@@ -25,5 +26,10 @@ public class StreamMain {
         poemBeautifier.beautify("Sialala", (anyString) -> anyString.toUpperCase());
         poemBeautifier.beautify("Sialala", (anyString) -> anyString.repeat(2));
         poemBeautifier.beautify("Sialala", (anyString) -> anyString.replaceFirst("ala" , "TAG"));
+
+        System.out.println("My task 7.2 Stream");
+        NumbersGenerator.generateEven(20);
     }
+
+
 }
