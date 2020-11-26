@@ -3,16 +3,10 @@ package com.kodilla.exception.test;
 public class FirstChallenge {
 
     public double divide(double a, double b) throws ArithmeticException {
-        try {
-            if (b == 0) {
+           if (b == 0) {
                 throw new ArithmeticException();
             }
 
-        } catch (ArithmeticException o) {
-            System.out.println("Error here: " + o);
-        } finally {
-            System.out.println("divide " + a + " by " +b);
-        }
         return a / b;
     }
 
@@ -23,8 +17,15 @@ public class FirstChallenge {
     public static void main(String[] args) {
 
         FirstChallenge firstChallenge = new FirstChallenge();
+        double result = 0;
+        try {
+            result = firstChallenge.divide(3, 0);
+        } catch (ArithmeticException o) {
+            System.out.println("Error here: " + o);
+        } finally {
+            System.out.println("Finally end ");
+        }
 
-        double result = firstChallenge.divide(3, 0);
 
         System.out.println(result);
 
