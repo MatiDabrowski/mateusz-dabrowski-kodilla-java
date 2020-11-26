@@ -6,6 +6,7 @@ import org.junit.jupiter.api.Test;
 
 import java.time.LocalDate;
 import java.time.Period;
+import java.time.temporal.ChronoUnit;
 import java.util.ArrayList;
 import java.util.Arrays;
 import java.util.IntSummaryStatistics;
@@ -165,9 +166,15 @@ public class BoardTestSuite {
 
         double average = daysSum / countList;
 
+        double average1 = project.getTaskLists().stream()
+                .filter(inProgressTasks::contains)
+                .flatMap(tl -> tl.getTasks().stream())
+                .mapToDouble(k -> ChronoUnit.DAYS.between(k.getCreated(), LocalDate.now()))
+                .average().getAsDouble();
 
         //Then
         assertEquals(3, countList);
         assertEquals(10, average);
+        assertEquals(10, average1);
     }
 }
