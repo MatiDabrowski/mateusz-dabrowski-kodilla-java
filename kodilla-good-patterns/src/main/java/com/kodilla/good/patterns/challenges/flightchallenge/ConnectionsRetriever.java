@@ -20,9 +20,11 @@ public class ConnectionsRetriever {
 
         gdansk.addArrivalAirport(warszawa);
         gdansk.addArrivalAirport(paris);
+        gdansk.addArrivalAirport(tokio);
 
         tokio.addArrivalAirport(paris);
         tokio.addArrivalAirport(gdansk);
+
 
         airportsList.add(warszawa);
         airportsList.add(tokio);

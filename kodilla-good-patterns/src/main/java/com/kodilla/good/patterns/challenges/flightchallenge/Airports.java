@@ -40,19 +40,19 @@ public class Airports {
         return airport;
     }
 
-    public Set<String> getArrivalAirport(){
+    public String getArrivalAirport(){
+        return arrivalAirportList.stream()
+                .map(Airports::getAirport)
+                .collect(Collectors.joining(", "));
+    }
+
+    public Set<String> getArrivalAirportList(){
         return arrivalAirportList.stream()
                 .map(Airports::getAirport)
                 .collect(Collectors.toSet());
     }
 
-    public String getAllArrivalAirport(){
-        return arrivalAirportList.stream()
-                .flatMap(airport -> airport.getArrivalAirport().stream())
-                .filter(airport -> airport != this.toString())
-                .map(Airports::getAirport)
-                .collect(Collectors.joining(","));
-    }
+
 
 
 
