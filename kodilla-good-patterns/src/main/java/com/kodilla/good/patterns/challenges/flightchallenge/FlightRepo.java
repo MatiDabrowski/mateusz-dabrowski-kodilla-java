@@ -7,7 +7,7 @@ public class FlightRepo implements  FlightRepository{
 
     Map<String, String> flightRepositoryList = new HashMap<>();
     @Override
-    public void createFlight(Flight flight) {
-        flightRepositoryList.put(flight.getDepartureAirport(), flight.getDepartureAirport());
+    public void createFlight(String departureAirport, String arrivalAirport) {
+        flightRepositoryList.put(departureAirport, arrivalAirport);
     }
 }

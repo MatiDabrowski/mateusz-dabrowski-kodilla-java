@@ -11,15 +11,10 @@ public class Flight implements FindFlight {
     Set<String> airportsArrivalList = new HashSet<>();
     String airportsFrom;
     String airportsTo;
-    String departureAirport;
-    String arrivalAirport;
-    String withTransfer;
-    public Flight(String departureAirport, String arrivalAirport){
-        this.departureAirport = departureAirport;
-        this.arrivalAirport = arrivalAirport;
-    }
+
+
     @Override
-    public void findFlightFrom() {
+    public void findFlightFrom(String departureAirport) {
         for (Airports airports: airportsList){
             if(departureAirport.equals(airports.toString())) {
                 airportsFrom = airports.getArrivalAirport();
@@ -30,7 +25,7 @@ public class Flight implements FindFlight {
     }
 
     @Override
-    public void findFlightTo() {
+    public void findFlightTo(String arrivalAirport) {
         for (Airports airports: airportsList){
             if(arrivalAirport.equals(airports.toString())) {
                 airportsTo = airports.getArrivalAirport();
@@ -41,7 +36,7 @@ public class Flight implements FindFlight {
     }
 
     @Override
-    public void finfFlightWithTransfer() {
+    public void finfFlightWithTransfer(String departureAirport, String arrivalAirport) {
         for (Airports airports: airportsList){
             if(departureAirport.equals(airports.toString())) {
                 airportsDepartureList = airports.getArrivalAirportList();
@@ -65,11 +60,5 @@ public class Flight implements FindFlight {
 
     }
 
-    public String getDepartureAirport() {
-        return departureAirport;
-    }
 
-    public String getArrivalAirport() {
-        return arrivalAirport;
-    }
 }
