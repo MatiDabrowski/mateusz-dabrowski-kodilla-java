@@ -11,32 +11,33 @@ public class Flight implements FindFlight {
     Set<String> airportsArrivalList = new HashSet<>();
     String airportsFrom;
     String airportsTo;
+    String airportsWithTransfer;
 
 
     @Override
-    public void findFlightFrom(String departureAirport) {
+    public String findFlightFrom(String departureAirport) {
         for (Airports airports: airportsList){
             if(departureAirport.equals(airports.toString())) {
                 airportsFrom = airports.getArrivalAirport();
             }
 
         }
-        System.out.println(airportsFrom);
+        return airportsFrom;
     }
 
     @Override
-    public void findFlightTo(String arrivalAirport) {
+    public String findFlightTo(String arrivalAirport) {
         for (Airports airports: airportsList){
             if(arrivalAirport.equals(airports.toString())) {
                 airportsTo = airports.getArrivalAirport();
             }
 
         }
-        System.out.println(airportsTo);
+        return airportsTo;
     }
 
     @Override
-    public void finfFlightWithTransfer(String departureAirport, String arrivalAirport) {
+    public String finfFlightWithTransfer(String departureAirport, String arrivalAirport) {
         for (Airports airports: airportsList){
             if(departureAirport.equals(airports.toString())) {
                 airportsDepartureList = airports.getArrivalAirportList();
@@ -52,11 +53,11 @@ public class Flight implements FindFlight {
         for(String airportDeparture: airportsDepartureList){
             for(String airportArrival: airportsArrivalList){
                 if (airportDeparture.contains(airportArrival) && airportArrival != arrivalAirport){
-                    System.out.println("Lot z przesiadką: " + departureAirport + ", " + airportArrival+ ", " + arrivalAirport);
+                    airportsWithTransfer = "Lot z przesiadką: " + departureAirport + ", " + airportArrival+ ", " + arrivalAirport;
                 }
             }
         }
-
+        return airportsWithTransfer;
 
     }
 
