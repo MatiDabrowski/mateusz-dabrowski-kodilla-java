@@ -14,10 +14,12 @@ import java.util.Optional;
 
 import static org.junit.jupiter.api.Assertions.*;
 
+
 @SpringBootTest
 public class TaskDaoTestSuite {
     @Autowired
     private TaskDao taskDao;
+    @Autowired
     private TaskListDaos taskListDao;
     private static final String DESCRIPTION = "Test: Learn Hibernate";
 

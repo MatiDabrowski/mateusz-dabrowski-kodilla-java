@@ -6,15 +6,15 @@ import javax.persistence.*;
 
 @Entity
 @Table(name = "TASKLIST")
-public class TaskList {
+public class TaskLists {
     private int id;
     private String listName;
     private String description;
 
-    public TaskList(){
+    public TaskLists(){
 
     }
-    public TaskList(String listName, String description) {
+    public TaskLists(String listName, String description) {
         this.listName = listName;
         this.description = description;
     }
