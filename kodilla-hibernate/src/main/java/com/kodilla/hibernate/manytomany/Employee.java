@@ -6,7 +6,10 @@ import javax.persistence.*;
 import java.util.ArrayList;
 import java.util.List;
 
-
+@NamedQuery(
+        name = "Employee.employeeByLastname",
+        query = "FROM Employee WHERE lastname LIKE :LASTNAME"
+)
 @Entity
 @Table(name = "EMPLOYEES")
 public class Employee {
@@ -69,5 +72,12 @@ public class Employee {
             )
     public List<Company> getCompanies() {
         return companies;
+    }
+
+    @Override
+    public String toString() {
+        return "Employee{" +
+                "lastname='" + lastname + '\'' +
+                '}';
     }
 }

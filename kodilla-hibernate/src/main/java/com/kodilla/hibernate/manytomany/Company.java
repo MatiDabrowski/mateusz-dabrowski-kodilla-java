@@ -1,10 +1,19 @@
 package com.kodilla.hibernate.manytomany;
 
 import javax.persistence.*;
+
+import com.kodilla.hibernate.task.Task;
 import com.sun.istack.NotNull;
 
 import java.util.ArrayList;
 import java.util.List;
+
+@NamedNativeQuery(
+        name = "Company.companyWithThreeLetters",
+        query = "SELECT * FROM COMPANIES" +
+                " WHERE SUBSTRING(COMPANY_NAME,1,3) LIKE :RANDOMTEXT",
+        resultClass = Company.class
+)
 
 @Entity
 @Table(name = "COMPANIES")
@@ -49,5 +58,12 @@ public class Company {
 
     public void setEmployees(List<Employee> employees) {
         this.employees = employees;
+    }
+
+    @Override
+    public String toString() {
+        return "Company{" +
+                "name='" + name + '\'' +
+                '}';
     }
 }
