@@ -1,9 +1,9 @@
 {
     "carname": "vitara",
     "carbrand": "suzuki",
-    "seatone": {
+    "seatone": [
         "material": "welur",
         "color": "black"
-    },
+    ],
     "engine": 2.4
 }
